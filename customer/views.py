@@ -1,4 +1,22 @@
-from django.shortcuts import render
+from customer.models import Customer
+from order.models import Order
+from products.models import Product
+# from django.contrib.auth.models import User
+
+from django.contrib import messages
+from customer.forms import CustomerModelForm
+from customer.filters import CustomerFilter
+from django.contrib import messages
+from django.utils import timezone
+from django.views.generic import ListView,DetailView#for pagination
+from django.views.generic import View
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+from django.template.loader import render_to_string
+
+from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+
 
 		
 @login_required(login_url = '/user/login/')     

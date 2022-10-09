@@ -1,8 +1,8 @@
 from django.urls import path
 
-from customers import views
-from customers import pdfviews,billviews
-from customers import exportviews
+from customer import views
+from customer import pdfviews,billviews
+from customer import exportviews
 
 
 

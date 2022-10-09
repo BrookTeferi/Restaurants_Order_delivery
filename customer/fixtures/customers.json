@@ -1,6 +1,6 @@
 [
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 16,
         "fields": {
             "name": "Bansika Thapa",
@@ -10,7 +10,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 17,
         "fields": {
             "name": "Saransh Kharel",
@@ -20,7 +20,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 18,
         "fields": {
             "name": "Bans Chaudharya",
@@ -30,7 +30,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 19,
         "fields": {
             "name": "Laxmi Sharma",
@@ -40,7 +40,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 20,
         "fields": {
             "name": "Sumi Thapa",
@@ -50,7 +50,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 21,
         "fields": {
             "name": "Suraj Dhakal",
@@ -60,7 +60,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 22,
         "fields": {
             "name": "Sanjit thakuri",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 23,
         "fields": {
             "name": "Aman Thapa",
@@ -80,7 +80,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 24,
         "fields": {
             "name": "Nirvay Chaudhary",
@@ -90,7 +90,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 25,
         "fields": {
             "name": "Nirvay khanal",
@@ -100,7 +100,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 26,
         "fields": {
             "name": "Roshan Sharma",
@@ -110,7 +110,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 27,
         "fields": {
             "name": "Puja Pandey",
@@ -120,7 +120,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 32,
         "fields": {
             "name": "retrica pandey",
@@ -130,7 +130,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 39,
         "fields": {
             "name": "Rupesh sharma",
@@ -140,7 +140,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 43,
         "fields": {
             "name": "Rama pandey",
@@ -150,7 +150,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 44,
         "fields": {
             "name": "Parwati subedi",
@@ -160,7 +160,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 45,
         "fields": {
             "name": "Anuska pandey",
@@ -170,7 +170,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 46,
         "fields": {
             "name": "Anuska pandey",
@@ -180,7 +180,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 47,
         "fields": {
             "name": "Amrita sharms",
@@ -190,7 +190,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 48,
         "fields": {
             "name": "Raju sharma",
@@ -200,7 +200,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 50,
         "fields": {
             "name": "Samrat Khan",
@@ -210,7 +210,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 51,
         "fields": {
             "name": "laxman kafle",
@@ -220,7 +220,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 52,
         "fields": {
             "name": "Dennis Ivy",
@@ -230,7 +230,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 53,
         "fields": {
             "name": "Harry Pandey",
@@ -240,7 +240,7 @@
         }
     },
     {
-        "model": "customers.customer",
+        "model": "customer.customer",
         "pk": 54,
         "fields": {
             "name": "Shova Pandey",

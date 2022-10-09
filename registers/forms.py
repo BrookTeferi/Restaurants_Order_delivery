@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm,PasswordResetForm,Authent
 from django import forms
 from django.forms import EmailField,TextInput,PasswordInput,ImageField
 from .models import Profile
-from django.utils.translation import ugettext_lazy as _ #for protected-
+from django.utils.translation import gettext_lazy as _
 
 
 

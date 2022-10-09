@@ -1,7 +1,7 @@
 import django_filters
 from django_filters import DateFilter, CharFilter
 
-from customers.models import Customer
+from customer.models import Customer
 from django.forms.widgets import TextInput,DateInput
 
 class CustomerFilter(django_filters.FilterSet):

@@ -6,8 +6,8 @@ from xhtml2pdf import pisa
 
 
 from django.views.generic import View
-from customers.models import Customer
-from orders.models import Order
+from customer.models import Customer
+from order.models import Order
 from datetime import datetime
 from django.shortcuts import get_object_or_404
 
