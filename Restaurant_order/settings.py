@@ -42,8 +42,17 @@ INSTALLED_APPS = [
     'media',
     'registers',
     'customer',
+    'import_export',
+    
+    'widget_tweaks',
+    'crispy_forms',
+    'django_filters',
+    'bootstrap_modal_forms',
+    'django.contrib.humanize',
+    
     
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -140,14 +149,12 @@ LOGOUT_REDIRECT_URL = '/user/login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')#heroku hold in this way for satic files
 
 STATICFILES_DIRS =[os.path.join(BASE_DIR,"static")]
+
 
 
 
