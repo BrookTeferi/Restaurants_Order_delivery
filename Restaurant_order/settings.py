@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-l=b@s^r!zvx)^@nd^tbz3!4k0h(0@gpxbgp364i(sbq&s8949&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'order',
+    'products',
+    'media',
+    'registers',
+    'customer',
+    
 ]
 
 MIDDLEWARE = [
@@ -76,10 +81,15 @@ WSGI_APPLICATION = 'Restaurant_order.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Restaurant_order',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
