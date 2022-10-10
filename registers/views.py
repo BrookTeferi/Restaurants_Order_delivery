@@ -29,7 +29,7 @@ from datetime import datetime, timedelta
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
 # @allowed_users(allowed_roles=['admin'])
-@login_required(login_url='/user/login/')
+@login_required()
 # @admin_only
 def dashboard(request):
 	# customer = Customer.objects.get(pk=cid)
@@ -84,7 +84,7 @@ def first_page(request):
 	return render(request,'registers/firstpage.html',{'current_date':current_date})
 
 
-@unauthenticated_user
+
 def loginPage(request):
 	form = LoginForm()
 	# form = LoginForm(request.POST or None)
@@ -101,12 +101,9 @@ def loginPage(request):
 			messages.error(request, 'Username OR password is incorrect')
 
 	context = {'form':form}
-	return render(request, 'registers/login.html', context)
+	return render(request, 'registers/index.html', context)
 
 
-
-
-@unauthenticated_user
 def SignupView(request):
 
 	form = SignupForm()
@@ -115,9 +112,9 @@ def SignupView(request):
 		form = SignupForm(request.POST)
 		if form.is_valid():
 			user = form.save()
-			username = form.cleaned_data.get('username')#retrieving username from save data from form
+			username = form.cleaned_data.get('username')
 
-			group = Group.objects.get(name='employee')#any time a user signup it is associated with employee group directly
+			group = Group.objects.get(name='username')
 			user.groups.add(group)
 			print("--------------",user)
 
@@ -127,7 +124,7 @@ def SignupView(request):
 		
 
 	context = {'form':form}
-	return render(request, 'registers/register.html', context)
+	return render(request, 'registers/login.html', context)
 
 
 """
