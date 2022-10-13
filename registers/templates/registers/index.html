@@ -177,6 +177,25 @@
                         </div>
 
                     </div>
+                    
+                <div class="row">
+
+                    <div class="col">
+                        <div class="col-md">
+                            <div class="card bg-secondary text-center text-white  mb-3" id="orders-delivered">
+                                <div class="card-header">
+                                    <h5 class="card-title">Today Sales</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">${{orders_total_price}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-5 ml-3">
+                            <a href="{% url 'order_app:list' %}" class="btn btn-warning"><i class="fas fa-eye"></i>  View Orders</a>
+                        </div>
+
+                    </div>
                   
                     <div class="col">
                         <div class="col-md">
