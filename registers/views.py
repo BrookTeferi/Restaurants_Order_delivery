@@ -52,9 +52,9 @@ def dashboard(request):
 	today_customers = customers.filter(date_created__year = today_date.year,date_created__month = today_date.month,
 	                                date_created__day = today_date.day).count()
 	
-	today_customers = customers.filter(date_created__gte = datetime.now() - timedelta(days=1)).count()#details of last 24 hours#b4 i also get same output using above line but now not so use this concept
-	today_order = orders.filter(created_at__year = today_date.year,created_at__month = today_date.month,created_at__day = today_date.day)
-	today_order = orders.filter(created_at__gte = datetime.now() - timedelta(days=1))#A timedelta object represents a duration, the difference between two dates or times.
+	# today_customers = customers.filter(date_created__gte = datetime.now() - timedelta(days=1)).count()#details of last 24 hours#b4 i also get same output using above line but now not so use this concept
+	# today_order = orders.filter(created_at__year = today_date.year,created_at__month = today_date.month,created_at__day = today_date.day)
+	# today_order = orders.filter(created_at__gte = datetime.now() - timedelta(days=1))#A timedelta object represents a duration, the difference between two dates or times.
 
 	order_total_price=0.00
  
@@ -63,12 +63,12 @@ def dashboard(request):
 		
 		order_total_price += per_total_price
   
-	print(order_total_price)
+	# print(order_total_price)
 	# customer = Customer.objects.get(pk=cid) #but i need pk = cid(update)
-	# particular_customer_price=0.00
-	# for order in customer.order_set.all():
-	# 	per_total_price = float(order.product.price) * order.quantity
-	# 	particular_customer_price += per_total_price 
+	particular_customer_price=0.00
+	for order in customer.order_set.all():
+		per_total_price = float(order.product.price) * order.quantity
+		particular_customer_price += per_total_price 
 	context={
 			'customers':customers,'orders_total_price':order_total_price,'total_orders':total_orders,
    			'myFilter':myFilter,'today_customers':today_customers,'current_data':datetime.now(),
