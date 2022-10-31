@@ -28,7 +28,7 @@ from datetime import datetime, timedelta
 
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
-# @allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin'])
 @login_required()
 # @admin_only
 def dashboard(request):
