@@ -127,20 +127,19 @@ def SignupView(request):
 	return render(request, 'registers/login.html', context)
 
 
-"""
+
 class SignupView(CreateView):
 	template_name = 'registers/register.html'
 	form_class = SignupForm
 	
 	def form_valid(self,form):
-		# email = form.cleaned_data.get('email') #for extra attribite
-		# contact = form.cleaned_data.get('contact')
+		email = form.cleaned_data.get('email') #for extra attribite
+		contact = form.cleaned_data.get('contact')
 		#various sms and others
 		form.save()
-		# user = form.cleaned_data.get('username')
-		# messages.add_message(self.request, messages.INFO, ' Account successfully register for ' +user)
+		user = form.cleaned_data.get('username')
+		messages.add_message(self.request, messages.INFO, ' Account successfully register for ' +user)
 		return redirect('register_app:login')
-"""
   
 	
 
