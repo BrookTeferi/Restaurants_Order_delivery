@@ -168,7 +168,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 
 def UserProfile(request):
-	defaultForm = UpdateDefaultProfile(instance=request.user)
+	# defaultForm = UpdateDefaultProfile(instance=request.user)
 	customForm = UpdateCustomProfile(instance=request.user.profile)
 	PassForm = PasswordChangeForm(request.user)
 	
