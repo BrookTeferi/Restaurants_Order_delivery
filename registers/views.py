@@ -22,8 +22,8 @@ from django.views.generic import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from registers.filters import CustomerFilter
 
-# from datetime import datetime
-# from django.utils import timezone
+from datetime import datetime
+from django.utils import timezone
 from datetime import datetime, timedelta
 
 # from django.contrib.auth.mixins import LoginRequiredMixin
@@ -148,16 +148,16 @@ class UserLogout(LogoutView):
 	I use LOGOUT_REDIRECT_URL in setting.py so,when i logout then setting ma set garako url ma janxa for logout
 	LOGOUT_REDIRECT_URL = '/user/login/
 	'''
-	# template_name = 'logout.html'
+	template_name = 'logout.html'
 	pass
 
 
 
 
 
-# @admin_only
-# def adminProfile(request):
-#     return render(request,'registers/admin_view.html')
+@admin_only
+def adminProfile(request):
+    return render(request,'registers/admin_view.html')
 
 
 
@@ -168,7 +168,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 
 def UserProfile(request):
-	# defaultForm = UpdateDefaultProfile(instance=request.user)
+	defaultForm = UpdateDefaultProfile(instance=request.user)
 	customForm = UpdateCustomProfile(instance=request.user.profile)
 	PassForm = PasswordChangeForm(request.user)
 	
