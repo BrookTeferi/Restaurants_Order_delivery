@@ -49,8 +49,8 @@ def dashboard(request):
 
 	today_date = datetime.today()#filter every day order product for daily expenses	
 
-	# today_customers = customers.filter(date_created__year = today_date.year,date_created__month = today_date.month,
-	#                                 date_created__day = today_date.day).count()
+	today_customers = customers.filter(date_created__year = today_date.year,date_created__month = today_date.month,
+	                                date_created__day = today_date.day).count()
 	
 	today_customers = customers.filter(date_created__gte = datetime.now() - timedelta(days=1)).count()#details of last 24 hours#b4 i also get same output using above line but now not so use this concept
 	today_order = orders.filter(created_at__year = today_date.year,created_at__month = today_date.month,created_at__day = today_date.day)
