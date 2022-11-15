@@ -1,4 +1,4 @@
-from django.shortcuts import render,reverse,redirect,resolve_url
+from django.shortcuts import render,redirect,resolve_url
 
 # from django.http import HttpResponseRedirect
 from django.contrib.auth.views import LoginView,LogoutView
@@ -26,7 +26,7 @@ from datetime import datetime
 from django.utils import timezone
 from datetime import datetime, timedelta
 
-# from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 @allowed_users(allowed_roles=['admin'])
 @login_required()
@@ -53,13 +53,13 @@ def dashboard(request):
 	#                                 date_created__day = today_date.day).count()
 	
 	today_customers = customers.filter(date_created__gte = datetime.now() - timedelta(days=1)).count()#details of last 24 hours#b4 i also get same output using above line but now not so use this concept
-	# today_order = orders.filter(created_at__year = today_date.year,created_at__month = today_date.month,created_at__day = today_date.day)
-	today_order = orders.filter(created_at__gte = datetime.now() - timedelta(days=1))#A timedelta object represents a duration, the difference between two dates or times.
+	today_order = orders.filter(created_at__year = today_date.year,created_at__month = today_date.month,created_at__day = today_date.day)
+	# today_order = orders.filter(created_at__gte = datetime.now() - timedelta(days=1))#A timedelta object represents a duration, the difference between two dates or times.
 
 	order_total_price=0.00
  
 	for order in today_order:
-		per_total_price = float(order.product.price) * order.quantity
+		per_total_price = float(order.products.price) * order.quantity
 		
 		order_total_price += per_total_price
   
@@ -86,8 +86,8 @@ def first_page(request):
 
 
 def loginPage(request):
-	form = LoginForm()
-	# form = LoginForm(request.POST or None)
+	# form = LoginForm()
+	form = LoginForm(request.POST or None)
 
 	if request.method == 'POST':
 		username = request.POST.get('username')#grabing username from form input value
@@ -104,27 +104,27 @@ def loginPage(request):
 	return render(request, 'registers/index.html', context)
 
 
-def SignupView(request):
+# def SignupView(request):
 
-	form = SignupForm()
+# 	form = SignupForm()
  
-	if request.method == 'POST':
-		form = SignupForm(request.POST)
-		if form.is_valid():
-			user = form.save()
-			username = form.cleaned_data.get('username')
+# 	if request.method == 'POST':
+# 		form = SignupForm(request.POST)
+# 		if form.is_valid():
+# 			user = form.save()
+# 			username = form.cleaned_data.get('username')
 
-			group = Group.objects.get(name='username')
-			user.groups.add(group)
-			print("--------------",user)
+# 			group = Group.objects.get(name='username')
+# 			user.groups.add(group)
+# 			print("--------------",user)
 
-			messages.success(request, 'Account was created for ' + username)
+# 			messages.success(request, 'Account was created for ' + username)
 
-			return redirect('register_app:login')
+# 			return redirect('register_app:login')
 		
 
-	context = {'form':form}
-	return render(request, 'registers/login.html', context)
+# 	context = {'form':form}
+# 	return render(request, 'registers/login.html', context)
 
 
 
