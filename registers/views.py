@@ -104,42 +104,42 @@ def loginPage(request):
 	return render(request, 'registers/index.html', context)
 
 
-def SignupView(request):
+# def SignupView(request):
 
-	form = SignupForm()
+# 	form = SignupForm()
  
-	if request.method == 'POST':
-		form = SignupForm(request.POST)
-		if form.is_valid():
-			user = form.save()
-			username = form.cleaned_data.get('username')
+# 	if request.method == 'POST':
+# 		form = SignupForm(request.POST)
+# 		if form.is_valid():
+# 			user = form.save()
+# 			username = form.cleaned_data.get('username')
 
-			group = Group.objects.get(name='username')
-			user.groups.add(group)
-			print("--------------",user)
+# 			group = Group.objects.get(name='username')
+# 			user.groups.add(group)
+# 			print("--------------",user)
 
-			messages.success(request, 'Account was created for ' + username)
+# 			messages.success(request, 'Account was created for ' + username)
 
-			return redirect('register_app:login')
+# 			return redirect('register_app:login')
 		
 
-	context = {'form':form}
-	return render(request, 'registers/login.html', context)
+# 	context = {'form':form}
+# 	return render(request, 'registers/login.html', context)
 
 
 
-# class SignupView(CreateView):
-# 	template_name = 'registers/register.html'
-# 	form_class = SignupForm
+class SignupView(CreateView):
+	template_name = 'registers/register.html'
+	form_class = SignupForm
 	
-# 	def form_valid(self,form):
-# 		email = form.cleaned_data.get('email') #for extra attribite
-# 		contact = form.cleaned_data.get('contact')
-# 		#various sms and others
-# 		form.save()
-# 		user = form.cleaned_data.get('username')
-# 		messages.add_message(self.request, messages.INFO, ' Account successfully register for ' +user)
-# 		return redirect('register_app:login')
+	def form_valid(self,form):
+		email = form.cleaned_data.get('email') #for extra attribite
+		contact = form.cleaned_data.get('contact')
+		#various sms and others
+		form.save()
+		user = form.cleaned_data.get('username')
+		messages.add_message(self.request, messages.INFO, ' Account successfully register for ' +user)
+		return redirect('register_app:login')
   
 	
 
