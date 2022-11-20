@@ -104,27 +104,27 @@ def loginPage(request):
 	return render(request, 'registers/index.html', context)
 
 
-# def SignupView(request):
+def SignupsView(request):
 
-# 	form = SignupForm()
+	form = SignupForm()
  
-# 	if request.method == 'POST':
-# 		form = SignupForm(request.POST)
-# 		if form.is_valid():
-# 			user = form.save()
-# 			username = form.cleaned_data.get('username')
+	if request.method == 'POST':
+		form = SignupForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			username = form.cleaned_data.get('username')
 
-# 			group = Group.objects.get(name='username')
-# 			user.groups.add(group)
-# 			print("--------------",user)
+			group = Group.objects.get(name='username')
+			user.groups.add(group)
+			print("--------------",user)
 
-# 			messages.success(request, 'Account was created for ' + username)
+			messages.success(request, 'Account was created for ' + username)
 
-# 			return redirect('register_app:login')
+			return redirect('register_app:login')
 		
 
-# 	context = {'form':form}
-# 	return render(request, 'registers/login.html', context)
+	context = {'form':form}
+	return render(request, 'registers/login.html', context)
 
 
 
