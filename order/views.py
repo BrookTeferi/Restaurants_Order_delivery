@@ -29,10 +29,10 @@ def create(request,cid):
    
     cus = Customer.objects.get(pk=cid)
     formset = OrderFormSet(queryset=Order.objects.none(),instance=cus)#i pass instance because i am adding order of particular customer
-    # print(formset)
+    print(formset)
     
     #queryset =Order.objects.none() la --> already bhako product inline form ma show hudaina maila Add order ma jada
-    # form = OrderForm(initial={'customer':cus})#right customer is in model--comment this wh
+    form = OrderForm(initial={'customer':cus})#right customer is in model--comment this wh
     
     if request.method=='POST':
         # form = OrderForm(request.POST)
