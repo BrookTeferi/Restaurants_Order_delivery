@@ -70,9 +70,9 @@ def search(request):
     field_value = request.GET.get('query')
     print(field_value)
     
-    # products = Product.objects.all()
-    # myFilter = ProductFilter(request.GET,queryset=products)
-    # products = myFilter.qs
+    products = Product.objects.all()
+    myFilter = ProductFilter(request.GET,queryset=products)
+    products = myFilter.qs
   
   
     if field_value:
@@ -168,8 +168,8 @@ def productData(request,cid):
 
     order = cus.order_set.all()
     # order =  Order.objects.values('created_at','product__price')
-    # productData = serializers.serialize('json',order)
-    # productData = productData['name']
+    productData = serializers.serialize('json',order)
+    productData = productData['name']
     
     
     for i in order:
