@@ -34,5 +34,5 @@ class OrderFilter(django_filters.FilterSet):
         model = Order#make filter for model Product
         fields = ['status']
         
-        # fields = ['customer__first_name']#generate filter form with all models
+        fields = ['customer__first_name']#generate filter form with all models
        
