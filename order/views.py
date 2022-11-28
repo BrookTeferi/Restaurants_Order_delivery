@@ -36,7 +36,7 @@ def create(request,cid):
     form = OrderForm(initial={'customer':cus})#right customer is in model--comment this wh
     
     if request.method=='POST':
-        # form = OrderForm(request.POST)
+        form = OrderForm(request.POST)
         formset = OrderFormSet(request.POST,instance = cus)
         if formset.is_valid():
             formset.save()
@@ -53,9 +53,9 @@ def create(request,cid):
 def index(request):
     orders=Order.objects.all().order_by("-id")
     total_orders=orders.count()
-    # myFilter = OrderFilter(request.GET,queryset=orders)
-    # orders = myFilter.qs
-    # # customers=Customer.objects.all()
+    myFilter = OrderFilter(request.GET,queryset=orders)
+    orders = myFilter.qs
+    # customers=Customer.objects.all()
     pending=orders.filter(status='Pending').count()#filter la choose(search)  garxa and all pending lai count garxa
     delivered=orders.filter(status="Delivered").count()
     
