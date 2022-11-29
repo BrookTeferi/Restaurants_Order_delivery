@@ -55,7 +55,7 @@ def index(request):
     total_orders=orders.count()
     myFilter = OrderFilter(request.GET,queryset=orders)
     orders = myFilter.qs
-    # customers=Customer.objects.all()
+    customers=Customer.objects.all()
     pending=orders.filter(status='Pending').count()#filter la choose(search)  garxa and all pending lai count garxa
     delivered=orders.filter(status="Delivered").count()
     
@@ -98,7 +98,7 @@ def search(request):
     field_value = request.GET.get('query')
     print(field_value)
     
-    # products = Product.objects.all()
+    products = Product.objects.all()
     # myFilter = ProductFilter(request.GET,queryset=products)
     # products = myFilter.qs
   
