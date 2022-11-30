@@ -127,9 +127,9 @@ def search(request):
 
 
 def edit(request, cid, oid):    
-    # ord=Order.objects.get(pk=oid) #i get all value and show that value to next page
+    ord=Order.objects.get(pk=oid) #i get all value and show that value to next page
     
-    ord = get_object_or_404(Order,pk = oid)
+    # ord = get_object_or_404(Order,pk = oid)
     customer = get_object_or_404(Customer,pk=cid)
     
     form=OrderForm(instance=ord)
@@ -144,12 +144,12 @@ def edit(request, cid, oid):
             form.save()
             messages.success(request,'Order is successfully updates.',extra_tags='alert')
             
-            return redirect('customer_app:view', cid)
+            # return redirect('customer_app:view', cid)
             
-            # return redirect("/customers/order/", pk = cid)#maila update.html ko save garda or post ma jada yo url ma redirect hunxa
+            return redirect("/customers/order/", pk = cid)#maila update.html ko save garda or post ma jada yo url ma redirect hunxa
 
-    # else:
-    #     form = ProductForm()
+    else:
+        form = ProductForm()
         
   
     return render(request,'orders/update.html',{'form':form,'customer_record':customer})
